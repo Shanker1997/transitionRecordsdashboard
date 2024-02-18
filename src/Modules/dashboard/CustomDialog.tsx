@@ -31,7 +31,7 @@ const AddTransitionRecord=(props:any)=> {
   const [open, setOpen] = React.useState(false);
   const schema = Yup.object().shape({
     category: Yup.string().required("Please select Category"),
-    amount: Yup.string().required("Please Enter Amount"),
+    amount: Yup.number().required("Please Enter Amount").nullable(),
     dateTransition: Yup.string().required("Please Enter Date Of Transition")
 })
 
@@ -75,9 +75,9 @@ const AddTransitionRecord=(props:any)=> {
         <DialogTitle>{"Add Transition Record"}</DialogTitle>
         <DialogContent>
          <Formik
-         initialValues={{dateTransition:"",amount:null,category:""}}
+         initialValues={{dateTransition:"",amount:0,category:""}}
          onSubmit={(values:any,{ resetForm })=>{
-          onSumbitHandler(values,resetform)
+          onSumbitHandler(values,resetForm)
          }}
          enableReinitialize>
             {({errors,values})=>(
@@ -99,7 +99,7 @@ const AddTransitionRecord=(props:any)=> {
                     <Field 
                     type="number" 
                     name="amount"
-                    value={values.amount}
+                    value={values?.amount}
                     className="form-control"
                     />
                     <ErrorMessage name="amount" component={'div'} className='text-danger'/>

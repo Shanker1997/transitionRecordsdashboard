@@ -112,13 +112,42 @@
 }
 // DashBoard Stylings 
 .dashboard-container{
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     padding:1rem 3rem;
     background:rgba(234,238,247,255);
+    .logout{
+        span{
+            cursor: pointer;
+            box-shadow: -3px -3px 2px #151617 inset, 3px 3px #f8f9fa inset;
+            padding: 0.5rem;
+
+        }
+    }
     .chart-container{
         .categoryChart{
             box-shadow: -3px -3px 2px #151617 inset, 3px 3px #f8f9fa inset;
         }
+    }
+    .TransitionRecord{
+        // background: white;
+        box-shadow: -3px -3px 2px #151617 inset, 3px 3px #f8f9fa inset;
+        margin: 2rem 0rem;
+        padding: 1rem 1.5rem;
+        .card-body{
+            div{
+                .card{
+                    .filterContainer {
+                        margin: 0 1rem;
+                        select{
+                            width:25%
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
     .top-card{
         .headerActions{
