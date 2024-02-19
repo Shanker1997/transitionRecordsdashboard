@@ -46,8 +46,8 @@ const  RecentTransitionDetails=()=> {
              value={chartData} 
              emptyMessage="No Recent Transition Records"
              tableStyle={{ minWidth: '50rem' }}>
-                <Column field="dateTransition" header="Code"></Column>
-                <Column field="amount" header="Name"></Column>
+                <Column field="dateTransition" header="Date"></Column>
+                <Column field="amount" header="Amount Spent"></Column>
                 <Column field="category" header="Category"></Column>
             </DataTable>
             </div>
